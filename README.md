@@ -64,7 +64,7 @@ To connect Keycloak and postgres, I created a new user and database by hand.
 The frontend is a [NextJS](https://nextjs.org/) application, I used [NextAuthJS](https://next-auth.js.org/)
 to execute auth integration and [TailwindCSS](https://tailwindcss.com/) to stylesheet.
 
-I choice NextJS because it's the first option in 
+I chose NextJS because it's the first option in 
 https://jamstack.org/generators/. I didn't compare with others. 
 (I would like to see the comparisons)
 
