@@ -13,7 +13,7 @@ These patches exist to be able to run everything locally without external depend
 
 # How it works
 
-## Backend 
+## [Backend](./backend) 
 
 The backend is a dockerized backend application with strapi, postgreSQL, mailhog and keycloak.
 
@@ -59,7 +59,7 @@ To maintain a Keycloak instance is a bored task.
 
 To connect Keycloak and postgres, I created a new user and database by hand.
 
-## Frontend
+## [Frontend](./frontend)
 
 The frontend is a [NextJS](https://nextjs.org/) application, I used [NextAuthJS](https://next-auth.js.org/)
 to execute auth integration and [TailwindCSS](https://tailwindcss.com/) to stylesheet.
