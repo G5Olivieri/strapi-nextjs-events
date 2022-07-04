@@ -19,8 +19,8 @@ The backend is a dockerized backend application with strapi, postgreSQL, mailhog
 
 ### [Strapi](https://strapi.io/)
 
-I used the Strapi CMS as backend, because a CMS solution would make the events 
-management easier, speakers and subscriptions, or any other persistent entities. 
+I used the Strapi CMS as backend, because a CMS solution would make the events, 
+speakers and subscriptions, or any other persistent entities, management easier. 
 I used Strapi because it was the first option in 
 https://jamstack.org/headless-cms/, but I could use the graphCMS or any other 
 headless CMS, I didn't compare the CMS systems and I don't know if there 
@@ -83,7 +83,7 @@ my first contact with GraphQL, I didn't study about I only followed the
 This is study purpose app, it's not production ready, I was testing 
 headless CMS + NextJS + GraphQL architecture, basicly the jamstack.
 
-The problem was inspired by personal problems with events in
+The problem was inspired by personal problems with events at
 Universities.
 
 To continue this project I need to refactor almost everything, add 
