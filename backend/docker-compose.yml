@@ -1,0 +1,63 @@
+version: '3'
+
+services:
+  strapi:
+    build: .
+    command: yarn develop
+    depends_on:
+      - postgres
+      - mailhog
+    env_file: .env
+    ports:
+      - ${PORT}:${PORT}
+    working_dir: /opt/app
+    environment:
+      DEBUG: 'true'
+      DATABASE_CLIENT: ${DATABASE_CLIENT}
+      DATABASE_HOST: postgres
+      DATABASE_NAME: ${DATABASE_NAME}
+      DATABASE_USERNAME: ${DATABASE_USERNAME}
+      DATABASE_PORT: 5432
+      JWT_SECRET: ${JWT_SECRET}
+      ADMIN_JWT_SECRET: ${ADMIN_JWT_SECRET}
+      DATABASE_PASSWORD: ${DATABASE_PASSWORD}
+      NODE_ENV: ${NODE_ENV}
+      SMTP_HOST: mailhog
+      SMTP_PORT: 1025
+    volumes:
+      - ./:/opt/app
+
+  postgres:
+    image: postgres:alpine
+    env_file: .env
+    environment:
+      POSTGRES_USER: ${DATABASE_USERNAME}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+      POSTGRES_DB: ${DATABASE_NAME}
+    volumes:
+      - postgres:/var/lib/postgresql/data/
+
+  mailhog:
+    image: mailhog/mailhog
+    ports:
+      - 8025:8025
+      - 1025:1025
+
+  keycloak:
+    image: quay.io/keycloak/keycloak:18.0.2
+    command: start-dev
+    environment:
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+      KC_DB: postgres
+      KC_DB_USERNAME: keycloak
+      KC_DB_PASSWORD: keycloak
+      KC_DB_URL_HOST: postgres
+      KC_DB_URL_DATABASE: keycloak
+      KC_DB_URL_PORT: 5432
+    ports:
+      - 8080:8080
+
+volumes:
+  postgres:
+

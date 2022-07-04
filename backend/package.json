@@ -1,0 +1,33 @@
+{
+  "name": "events-backend",
+  "version": "0.1.0",
+  "description": "A Strapi application",
+  "scripts": {
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "build": "strapi build",
+    "strapi": "strapi"
+  },
+  "devDependencies": {},
+  "dependencies": {
+    "@strapi/plugin-graphql": "^4.2.0",
+    "@strapi/plugin-i18n": "4.2.0",
+    "@strapi/plugin-users-permissions": "4.2.0",
+    "@strapi/provider-email-nodemailer": "^4.2.0",
+    "@strapi/strapi": "4.2.0",
+    "pg": "^8.7.3",
+    "request-logs": "^2.1.4",
+    "sharp": "^0.30.7"
+  },
+  "author": {
+    "name": "A Strapi developer"
+  },
+  "strapi": {
+    "uuid": "c711caca-a02d-4bd0-bfff-9789ffad0cf3"
+  },
+  "engines": {
+    "node": ">=12.x.x <=16.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT"
+}
